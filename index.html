@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoreCode Repairs | Hardware & Micro-Soldering</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">CoreCode<span>Repairs</span></a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#book" class="btn-primary">Book Repair</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-container">
+      <span class="badge">Component-Level Diagnostics</span>
+      <h1>Precision Bench Repair & Micro-Soldering</h1>
+      <p>Specializing in HDMI port replacements, board-level component repair, custom PC builds, and console diagnostics.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn-primary btn-large">Get a Free Quote</a>
+        <a href="#services" class="btn-secondary btn-large">View Services</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="services" class="services-section">
+    <div class="section-container">
+      <h2 class="section-title">Bench Services</h2>
+      <p class="section-subtitle">Professional hardware repair with clear upfront quotes.</p>
+      
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Micro-Soldering</h3>
+          <p>HDMI/USB-C port replacements, blown capacitors, and board-level trace repair for consoles and laptops.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎮</div>
+          <h3>Console Repair</h3>
+          <p>PS5, Xbox, and Switch deep cleaning, thermal liquid metal repasting, and disc drive repairs.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <h3>Custom PC & Upgrades</h3>
+          <p>Full custom PC assembly, component diagnostics, SSD/RAM upgrades, and clean OS deployments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="form-section">
+    <div class="form-container">
+      <h2>Submit an Intake Inquiry</h2>
+      <p>Fill out the details below for a quote on your device repair.</p>
+      
+      <form action="https://api.web3forms.com/submit" method="POST" class="intake-form">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="device">Device Model</label>
+          <input type="text" id="device" name="device" placeholder="e.g. PlayStation 5, Custom Desktop PC" required>
+        </div>
+
+        <div class="form-group">
+          <label for="issue">Describe the Issue</label>
+          <textarea id="issue" name="issue" rows="4" placeholder="e.g. Broken HDMI port, no display, shutting off randomly..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full">Submit Repair Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 CoreCode Repairs. All rights reserved.</p>
+      <p class="tax-note">Tax-exempt small supplier under CRA regulations.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
