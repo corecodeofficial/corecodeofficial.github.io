@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoreCode Repairs | Hardware & Micro-Soldering</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">CoreCode<span>Repairs</span></a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#book" class="btn-primary">Book Repair</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-container">
+      <span class="badge">Component-Level Diagnostics</span>
+      <h1>Precision Bench Repair & Micro-Soldering</h1>
+      <p>Clear upfront quotes, quality bench service, and no hidden fees.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn-primary btn-large">Get a Free Quote</a>
+        <a href="#services" class="btn-secondary btn-large">View Services</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tech Highlights Ticker -->
+  <div class="ticker-bar">
+    <p>HDMI Ports • USB-A • 3.5mm Audio Jacks • Barrel Plugs • Console Deep Cleans • Liquid Metal • Custom PCs • OS Flashing • Refurbished Workstations</p>
+  </div>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="section-container">
+      <h2 class="section-title">Bench Services</h2>
+      <p class="section-subtitle">Select a category below or expand the full service list for specific rates.</p>
+      
+      <!-- Primary 4 Category Cards -->
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Board-Level Micro-Soldering</h3>
+          <p>Precision HDMI port replacements, USB-A repairs, 3.5mm audio jacks, DC barrel plugs, and surface-mount soldering.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎮</div>
+          <h3>Console Maintenance</h3>
+          <p>PS5, Xbox, and Switch deep thermal cleaning, liquid metal re-application, optical drive repairs, and power diagnostics.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <h3>Custom PCs & Upgrades</h3>
+          <p>Full desktop assembly, custom cable management, component upgrades (RAM/SSD), and clean Windows OS deployment.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🖥️</div>
+          <h3>Refurbished Workstations</h3>
+          <p>Budget office and student PC builds using fast SSD storage and Wi-Fi capability for high-reliability home performance.</p>
+        </div>
+      </div>
+
+      <!-- Expandable Full Service Drawer Button -->
+      <div class="drawer-toggle-wrapper">
+        <button id="toggle-drawer-btn" class="btn-secondary" onclick="toggleFullServices()">
+          View Full Service List & Rates ↓
+        </button>
+      </div>
+
+      <!-- Expanded Detailed List (Hidden by default) -->
+      <div id="full-services-drawer" class="services-drawer" style="display: none;">
+        <div class="drawer-grid">
+          
+          <div class="drawer-category">
+            <h4>Port & Connector Replacements</h4>
+            <ul>
+              <li><strong>HDMI Port Replacement</strong> (PS5, Xbox, Laptops) — <span>Quote per model</span></li>
+              <li><strong>USB-A Port Replacement</strong> — <span>Fixed rate</span></li>
+              <li><strong>3.5mm Headphone Jack Replacement</strong> — <span>Fixed rate</span></li>
+              <li><strong>DC Power Barrel Plug Repair</strong> — <span>Fixed rate</span></li>
+            </ul>
+          </div>
+
+          <div class="drawer-category">
+            <h4>Console Servicing</h4>
+            <ul>
+              <li><strong>Full Console Deep Clean & Repaste</strong> — <span>$50</span></li>
+              <li><strong>PS5 Liquid Metal Thermal Refresh</strong> — <span>$60</span></li>
+              <li><strong>Optical Disc Drive Servicing</strong> — <span>$40</span></li>
+            </ul>
+          </div>
+
+          <div class="drawer-category">
+            <h4>Desktop & OS Services</h4>
+            <ul>
+              <li><strong>Custom PC Assembly & Management</strong> — <span>$80 - $120</span></li>
+              <li><strong>SSD Upgrade + Clean OS Deployment</strong> — <span>$40 + Part</span></li>
+              <li><strong>Hardware Diagnostics</strong> — <span>$35 (Applied to repair if approved)</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Booking / Intake Form -->
+  <section id="book" class="form-section">
+    <div class="form-container">
+      <h2>Submit an Intake Inquiry</h2>
+      <p>Fill out the details below for a quote on your device repair.</p>
+      
+      <form action="https://api.web3forms.com/submit" method="POST" class="intake-form">
+        <input type="hidden" name="access_key" value="607b9a51-b97b-4751-910d-5ac067545548">
+        
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="device">Device Model</label>
+          <input type="text" id="device" name="device" placeholder="e.g. PlayStation 5, Custom Desktop PC" required>
+        </div>
+
+        <div class="form-group">
+          <label for="issue">Describe the Issue</label>
+          <textarea id="issue" name="issue" rows="4" placeholder="e.g. Broken HDMI port, no display, shutting off randomly..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full">Submit Repair Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 CoreCode Repairs. All rights reserved.</p>
+      <p class="tax-note">Tax-exempt small supplier under CRA regulations.</p>
+    </div>
+  </footer>
+
+  <!-- Drawer Toggle Script -->
+  <script>
+    function toggleFullServices() {
+      var drawer = document.getElementById("full-services-drawer");
+      var btn = document.getElementById("toggle-drawer-btn");
+      if (drawer.style.display === "none") {
+        drawer.style.display = "block";
+        btn.innerText = "Hide Full Service List ↑";
+      } else {
+        drawer.style.display = "none";
+        btn.innerText = "View Full Service List & Rates ↓";
+      }
+    }
+  </script>
+
+</body>
+</html>
