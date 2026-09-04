@@ -186,7 +186,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
-  max-width: 300px;
+  max-height: 300px;
   gap: 1.5rem;
 }
 
