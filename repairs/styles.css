@@ -195,6 +195,7 @@ body {
   border-radius: var(--radius);
   padding: 2rem;
   max-height: 300px;
+  max-width: 300px;
   transition: var(--transition);
 }
 
