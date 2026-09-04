@@ -186,7 +186,6 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
-  max-height: 300px;
   gap: 1.5rem;
 }
 
@@ -195,6 +194,7 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2rem;
+  max-height: 300px;
   transition: var(--transition);
 }
 
