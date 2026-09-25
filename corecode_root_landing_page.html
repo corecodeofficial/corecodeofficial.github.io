@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreCode | Official Gateway</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#090D16',
+                        },
+                        corp: {
+                            blue: '#0284C7',
+                            hover: '#0369A1',
+                            accent: '#0EA5E9',
+                            light: '#F8FAFC',
+                            cardBg: '#FFFFFF',
+                            border: '#E2E8F0',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+        .card-shadow-hover:hover {
+            box-shadow: 0 20px 30px -10px rgba(2, 132, 199, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body class="bg-corp-light text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <div class="bg-navy-950 text-slate-300 text-xs py-2 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <a href="mailto:contact.corecode@gmail.com" class="flex items-center space-x-2 hover:text-corp-accent transition-colors">
+                    <i class="fa-solid fa-envelope text-corp-accent"></i>
+                    <span>contact.corecode@gmail.com</span>
+                </a>
+            </div>
+            <div class="text-slate-400 font-medium hidden sm:block">
+                <i class="fa-solid fa-code text-corp-accent mr-1"></i>
+                Technology & Digital Solutions
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-white border-b border-corp-border shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-lg bg-navy-900 flex items-center justify-center text-corp-accent shadow-md group-hover:bg-corp-blue group-hover:text-white transition-colors duration-200">
+                    <i class="fa-solid fa-code text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-navy-900 block leading-tight">CORE<span class="text-corp-blue">CODE</span></span>
+                    <span class="text-[11px] text-slate-500 font-semibold tracking-wider uppercase block">Official Hub</span>
+                </div>
+            </a>
+
+            <nav class="flex items-center space-x-6">
+                <a href="#sites" class="text-sm font-semibold text-slate-700 hover:text-corp-blue transition-colors uppercase tracking-wider">Our Sites</a>
+                <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-corp-blue transition-colors uppercase tracking-wider">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="hero-bg text-white py-24 lg:py-28 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <p class="text-corp-accent font-bold uppercase tracking-widest text-xs sm:text-sm mb-3">
+                    Technology • Repairs • Software Solutions
+                </p>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
+                    Welcome to <span class="text-corp-accent">CoreCode</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-200 font-light mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Connecting local technical expertise with innovative digital projects. Explore our official platforms and services below.
+                </p>
+                <a href="#sites" class="inline-flex items-center space-x-2 bg-corp-blue hover:bg-corp-hover text-white font-bold px-8 py-3.5 rounded-md shadow-lg transition-all duration-200 uppercase tracking-wider text-sm">
+                    <span>Explore Our Sites</span>
+                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="sites" class="relative z-20 -mt-10 pb-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-white rounded-xl border border-corp-border card-shadow p-8 sm:p-12">
+                    <div class="text-center mb-12">
+                        <h2 class="text-xs uppercase tracking-widest text-slate-500 font-extrabold mb-1">Our Ecosystem</h2>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-navy-900 uppercase">Our Sites & Platforms</p>
+                        <div class="w-12 h-1 bg-corp-blue mx-auto mt-3"></div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        
+                        <!-- CARD 1: CoreCode Repairs -->
+                        <div class="bg-white border-2 border-corp-blue rounded-xl p-8 card-shadow-hover transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 bg-corp-blue text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-lg tracking-wider">
+                                Active Site
+                            </div>
+                            <div>
+                                <div class="w-14 h-14 rounded-xl bg-slate-100 text-corp-blue flex items-center justify-center text-2xl mb-6 border border-slate-200 group-hover:bg-corp-blue group-hover:text-white transition-colors duration-300">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <h3 class="text-2xl font-black text-navy-900 mb-3">CoreCode Repairs</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                    Professional electronics soldering and PC repair services. Micro-soldering, hardware diagnostics, custom builds, OS installations, and data recovery.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100">
+                                <a href="repairs/index.html" class="inline-flex items-center justify-between w-full bg-corp-blue hover:bg-corp-hover text-white font-bold px-6 py-3.5 rounded-lg shadow transition-colors text-sm uppercase tracking-wider">
+                                    <span>Visit CoreCode Repairs</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- CARD 2: CoreCode Projects / Digital Solutions -->
+                        <div class="bg-white border border-corp-border rounded-xl p-8 card-shadow-hover transition-all duration-300 flex flex-col justify-between opacity-80 hover:opacity-100">
+                            <div>
+                                <div class="w-14 h-14 rounded-xl bg-slate-100 text-slate-400 flex items-center justify-center text-2xl mb-6 border border-slate-200">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <div class="flex items-center space-x-2 mb-3">
+                                    <h3 class="text-2xl font-black text-navy-900">CoreCode Projects</h3>
+                                    <span class="bg-slate-200 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Coming Soon</span>
+                                </div>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                    Our upcoming showcase of custom software solutions, web applications, open-source utilities, and digital development projects.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100">
+                                <button disabled class="w-full bg-slate-100 text-slate-400 font-bold px-6 py-3.5 rounded-lg text-sm uppercase tracking-wider cursor-not-allowed text-center">
+                                    Under Development
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 bg-white border-t border-corp-border">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h3 class="text-xl font-bold text-navy-900 mb-2 uppercase">Have Questions or Need Direct Support?</h3>
+                <p class="text-slate-600 text-sm mb-6">Get in touch with us directly and we'll respond within 1-2 business days.</p>
+                <a href="mailto:contact.corecode@gmail.com" class="inline-flex items-center space-x-2 bg-navy-900 hover:bg-navy-800 text-white font-bold px-6 py-3 rounded-lg shadow text-sm uppercase tracking-wider transition-colors">
+                    <i class="fa-solid fa-envelope text-corp-accent"></i>
+                    <span>contact.corecode@gmail.com</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-navy-950 text-slate-400 text-xs py-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="text-white font-bold tracking-tight text-sm uppercase">CORECODE</span>
+                <p class="text-slate-500 mt-1">Official Hub & Digital Directory</p>
+            </div>
+            <div>
+                &copy; <span id="year"></span> CoreCode. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
