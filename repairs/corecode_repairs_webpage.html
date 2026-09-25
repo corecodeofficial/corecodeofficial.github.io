@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreCode Repairs | Electronics Soldering & PC Repair</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#090D16',
+                        },
+                        corp: {
+                            blue: '#0284C7',
+                            hover: '#0369A1',
+                            accent: '#0EA5E9',
+                            light: '#F8FAFC',
+                            cardBg: '#FFFFFF',
+                            border: '#E2E8F0',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.94)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+        .card-shadow-hover:hover {
+            box-shadow: 0 20px 30px -10px rgba(2, 132, 199, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body class="bg-corp-light text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- TOP CORPORATE BAR -->
+    <div class="bg-navy-950 text-slate-300 text-xs py-2 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <a href="tel:7096402849" class="hover:text-corp-accent transition-colors flex items-center space-x-2">
+                    <i class="fa-solid fa-phone text-corp-accent"></i>
+                    <span>(709)-640-2849</span>
+                </a>
+                <a href="mailto:contact.corecode@gmail.com" class="hidden sm:flex items-center space-x-2 hover:text-corp-accent transition-colors">
+                    <i class="fa-solid fa-envelope text-corp-accent"></i>
+                    <span>contact.corecode@gmail.com</span>
+                </a>
+            </div>
+            <div class="text-slate-400 font-medium">
+                <i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i>
+                Local repairs • Local prices
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white border-b border-corp-border shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-lg bg-navy-900 flex items-center justify-center text-corp-accent shadow-md group-hover:bg-corp-blue group-hover:text-white transition-colors duration-200">
+                    <i class="fa-solid fa-microchip text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-navy-900 block leading-tight">CORE<span class="text-corp-blue">CODE</span> REPAIRS</span>
+                    <span class="text-[11px] text-slate-500 font-semibold tracking-wider uppercase block">Electronics & PC Service</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-sm font-semibold text-slate-700 hover:text-corp-blue transition-colors uppercase tracking-wider">Services</a>
+                <a href="#guarantees" class="text-sm font-semibold text-slate-700 hover:text-corp-blue transition-colors uppercase tracking-wider">Guarantees</a>
+                <a href="#quote" class="text-sm font-semibold text-slate-700 hover:text-corp-blue transition-colors uppercase tracking-wider">Request Quote</a>
+                <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-corp-blue transition-colors uppercase tracking-wider">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:flex items-center">
+                <a href="#quote" class="bg-corp-blue hover:bg-corp-hover text-white font-bold px-5 py-2.5 rounded-lg shadow transition-all duration-200 text-sm uppercase tracking-wider">
+                    Get Free Quote
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-corp-border px-4 py-4 space-y-3">
+            <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-sm font-bold text-slate-700 hover:bg-slate-50 uppercase">Services</a>
+            <a href="#guarantees" class="mobile-link block px-3 py-2 rounded-md text-sm font-bold text-slate-700 hover:bg-slate-50 uppercase">Guarantees</a>
+            <a href="#quote" class="mobile-link block px-3 py-2 rounded-md text-sm font-bold text-slate-700 hover:bg-slate-50 uppercase">Request Quote</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-sm font-bold text-slate-700 hover:bg-slate-50 uppercase">Contact</a>
+            <a href="#quote" class="mobile-link block w-full text-center bg-corp-blue hover:bg-corp-hover text-white font-bold px-4 py-3 rounded-lg shadow mt-2 uppercase text-sm">Get Free Quote</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section class="hero-bg text-white py-24 lg:py-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <p class="text-corp-accent font-bold uppercase tracking-widest text-xs sm:text-sm mb-3">
+                    Expert Micro-Soldering & Computer Diagnostic Center
+                </p>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
+                    Laptop Running Hot? <br class="hidden sm:inline" /> Console Won't Read Discs?
+                </h1>
+                <p class="text-xl sm:text-2xl text-slate-200 font-light mb-10 max-w-2xl mx-auto">
+                    Don’t toss it, <span class="text-white font-bold underline decoration-corp-blue underline-offset-8">bring it here.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#quote" class="w-full sm:w-auto bg-corp-blue hover:bg-corp-hover text-white font-bold px-8 py-3.5 rounded-md shadow-lg transition-all duration-200 uppercase tracking-wider text-sm">
+                        Request Quote
+                    </a>
+                    <a href="#services" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-md backdrop-blur-sm border border-white/20 transition-all duration-200 uppercase tracking-wider text-sm">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OVERLAPPING KEY SERVICES SECTION -->
+        <section id="services" class="relative z-20 -mt-12 pb-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-white rounded-xl border border-corp-border card-shadow p-8 mb-16">
+                    <div class="text-center mb-10">
+                        <h2 class="text-xs uppercase tracking-widest text-slate-500 font-extrabold mb-1">Our Core Solutions</h2>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-navy-900 uppercase">Our Key Services</p>
+                        <div class="w-12 h-1 bg-corp-blue mx-auto mt-3"></div>
+                    </div>
+
+                    <!-- Services 6 Grid -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Card 1 -->
+                        <div class="bg-white border border-corp-border rounded-xl p-6 card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-lg bg-slate-100 text-corp-blue flex items-center justify-center text-xl mb-4 border border-slate-200">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-navy-900 mb-2">Micro-soldering</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                    Precision logic board and microscopic component replacement, connector repairs, and circuit trace restoration.
+                                </p>
+                            </div>
+                            <span class="text-xs font-bold text-corp-blue uppercase tracking-wider block border-t border-slate-100 pt-3">
+                                Component Replacement
+                            </span>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="bg-white border border-corp-border rounded-xl p-6 card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-lg bg-slate-100 text-corp-blue flex items-center justify-center text-xl mb-4 border border-slate-200">
+                                    <i class="fa-solid fa-desktop"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-navy-900 mb-2">PC / Laptop Maintenance</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                    Full hardware cleaning, thermal compound repastings, custom PC builds, and component upgrades.
+                                </p>
+                            </div>
+                            <span class="text-xs font-bold text-corp-blue uppercase tracking-wider block border-t border-slate-100 pt-3">
+                                Cleaning, Repastings & Builds
+                            </span>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="bg-white border border-corp-border rounded-xl p-6 card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-lg bg-slate-100 text-corp-blue flex items-center justify-center text-xl mb-4 border border-slate-200">
+                                    <i class="fa-brands fa-windows"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-navy-900 mb-2">OS Installs</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                    Clean, fully activated operating system installations for Windows, Mac OS, Linux, and ChromeOS Flex.
+                                </p>
+                            </div>
+                            <span class="text-xs font-bold text-corp-blue uppercase tracking-wider block border-t border-slate-100 pt-3">
+                                Windows, Mac, Linux, ChromeOS
+                            </span>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="bg-white border border-corp-border rounded-xl p-6 card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-lg bg-slate-100 text-corp-blue flex items-center justify-center text-xl mb-4 border border-slate-200">
+                                    <i class="fa-solid fa-shield-virus"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-navy-900 mb-2">Malware Cleanup</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                    Thorough removal of viruses, trojans, adware, and spyware without compromising your valuable files.
+                                </p>
+                            </div>
+                            <span class="text-xs font-bold text-corp-blue uppercase tracking-wider block border-t border-slate-100 pt-3">
+                                Deep Malware Removal
+                            </span>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="bg-white border border-corp-border rounded-xl p-6 card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-lg bg-slate-100 text-corp-blue flex items-center justify-center text-xl mb-4 border border-slate-200">
+                                    <i class="fa-solid fa-hard-drive"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-navy-900 mb-2">Data Transfer to SSD</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                    Upgrade your slow, aging hard drive to a blazing-fast Solid-State Drive with seamless data migration.
+                                </p>
+                            </div>
+                            <span class="text-xs font-bold text-corp-blue uppercase tracking-wider block border-t border-slate-100 pt-3">
+                                Solid-State Upgrades
+                            </span>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="bg-white border border-corp-border rounded-xl p-6 card-shadow-hover transition-all duration-300 flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 rounded-lg bg-slate-100 text-corp-blue flex items-center justify-center text-xl mb-4 border border-slate-200">
+                                    <i class="fa-solid fa-gamepad"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-navy-900 mb-2">Console & Small Electronics</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                    Expert repairs for gaming consoles (PS5, Xbox, Switch), disc drives, controllers, ports, and gadgets.
+                                </p>
+                            </div>
+                            <span class="text-xs font-bold text-corp-blue uppercase tracking-wider block border-t border-slate-100 pt-3">
+                                Consoles & Peripherals
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GUARANTEES / WHY CHOOSE US -->
+        <section id="guarantees" class="py-16 bg-white border-y border-corp-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <h2 class="text-xs uppercase tracking-widest text-slate-500 font-extrabold mb-1">Our Commitments</h2>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-navy-900 uppercase">Service Guarantees</p>
+                    <div class="w-12 h-1 bg-corp-blue mx-auto mt-3"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <div class="text-center p-6 bg-corp-light border border-corp-border rounded-xl">
+                        <div class="w-14 h-14 rounded-full bg-corp-blue text-white mx-auto flex items-center justify-center text-2xl mb-4 shadow-md">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Free Quote First</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Free quote before any work starts. Know exact upfront costs with complete transparency.
+                        </p>
+                    </div>
+
+                    <div class="text-center p-6 bg-corp-light border border-corp-border rounded-xl">
+                        <div class="w-14 h-14 rounded-full bg-emerald-600 text-white mx-auto flex items-center justify-center text-2xl mb-4 shadow-md">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">No Fix, No Charge</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Risk-free repair guarantee. If we can't solve your issue, you don't pay anything.
+                        </p>
+                    </div>
+
+                    <div class="text-center p-6 bg-corp-light border border-corp-border rounded-xl">
+                        <div class="w-14 h-14 rounded-full bg-navy-900 text-white mx-auto flex items-center justify-center text-2xl mb-4 shadow-md">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Fast Turnaround</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Not sure if your issue fits? Reach out anyway, and we'll get back to you within 1-2 business days.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- REPAIR QUOTE FORM SECTION -->
+        <section id="quote" class="py-20 bg-corp-light">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-white border border-corp-border rounded-xl p-8 sm:p-12 card-shadow">
+                    
+                    <div class="text-center mb-8">
+                        <h2 class="text-xs uppercase tracking-widest text-slate-500 font-extrabold mb-1">Get Started</h2>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-navy-900 uppercase">Request A Free Quote</p>
+                        <div class="w-12 h-1 bg-corp-blue mx-auto mt-3"></div>
+                    </div>
+
+                    <!-- LOGISTICS POLICY NOTICE (CRITICAL REQUIREMENT) -->
+                    <div class="mb-8 p-4 bg-slate-50 border-l-4 border-corp-blue rounded-r-lg text-sm text-slate-700">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-info text-corp-blue text-lg mt-0.5 shrink-0"></i>
+                            <div>
+                                <strong class="text-navy-900">Drop-off & Pickup Policy:</strong>
+                                Drop-off and pickup details will be coordinated and arranged after your repair request has been submitted and processed.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FORM -->
+                    <form id="repair-form" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Full Name *</label>
+                                <input type="text" id="name" required placeholder="John Doe" class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-corp-blue focus:ring-1 focus:ring-corp-blue text-sm">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Email Address *</label>
+                                <input type="email" id="email" required placeholder="john@example.com" class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-corp-blue focus:ring-1 focus:ring-corp-blue text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="phone" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Phone Number *</label>
+                                <input type="tel" id="phone" required placeholder="(709) 000-0000" class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-corp-blue focus:ring-1 focus:ring-corp-blue text-sm">
+                            </div>
+
+                            <div>
+                                <label for="device" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Device Type *</label>
+                                <select id="device" required class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-800 focus:outline-none focus:border-corp-blue focus:ring-1 focus:ring-corp-blue text-sm">
+                                    <option value="" disabled selected>Select device...</option>
+                                    <option value="Laptop">Laptop / PC</option>
+                                    <option value="Desktop PC">Desktop Build</option>
+                                    <option value="Gaming Console">Gaming Console</option>
+                                    <option value="Peripheral / Board">Peripheral / Board Component</option>
+                                    <option value="Other">Other Electronics</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Preferred Contact Method</label>
+                            <div class="flex space-x-6">
+                                <label class="flex items-center space-x-2 cursor-pointer text-sm text-slate-700">
+                                    <input type="radio" name="contact-method" value="Email" checked class="text-corp-blue focus:ring-corp-blue">
+                                    <span>Email</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer text-sm text-slate-700">
+                                    <input type="radio" name="contact-method" value="Phone" class="text-corp-blue focus:ring-corp-blue">
+                                    <span>Phone Call / SMS</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="issue" class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Describe the Issue *</label>
+                            <textarea id="issue" rows="4" required placeholder="Describe your device issue (e.g., laptop runs hot, console won't read discs, no power, etc.)" class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-corp-blue focus:ring-1 focus:ring-corp-blue text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-corp-blue hover:bg-corp-hover text-white font-bold py-4 rounded-lg shadow-md transition-all duration-200 uppercase tracking-wider text-sm">
+                            Submit Request
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DIRECT CONTACT & LOCATION INFO -->
+        <section id="contact" class="py-16 bg-white border-t border-corp-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    
+                    <a href="mailto:contact.corecode@gmail.com" class="p-6 rounded-xl border border-corp-border hover:border-corp-blue transition-colors group">
+                        <div class="w-12 h-12 bg-slate-100 text-corp-blue rounded-full mx-auto flex items-center justify-center text-xl mb-4 group-hover:bg-corp-blue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h4 class="font-bold text-navy-900 uppercase text-xs tracking-wider mb-1">Email Us</h4>
+                        <p class="text-slate-700 text-sm font-semibold">contact.corecode@gmail.com</p>
+                    </a>
+
+                    <a href="tel:7096402849" class="p-6 rounded-xl border border-corp-border hover:border-corp-blue transition-colors group">
+                        <div class="w-12 h-12 bg-slate-100 text-corp-blue rounded-full mx-auto flex items-center justify-center text-xl mb-4 group-hover:bg-corp-blue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h4 class="font-bold text-navy-900 uppercase text-xs tracking-wider mb-1">Call / Text</h4>
+                        <p class="text-slate-700 text-sm font-semibold">(709)-640-2849</p>
+                    </a>
+
+                    <a href="https://corecodeofficial.github.io/repairs/" target="_blank" rel="noopener" class="p-6 rounded-xl border border-corp-border hover:border-corp-blue transition-colors group">
+                        <div class="w-12 h-12 bg-slate-100 text-corp-blue rounded-full mx-auto flex items-center justify-center text-xl mb-4 group-hover:bg-corp-blue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h4 class="font-bold text-navy-900 uppercase text-xs tracking-wider mb-1">Official Site</h4>
+                        <p class="text-slate-700 text-sm font-semibold">corecodeofficial.github.io/repairs/</p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CORPORATE BOTTOM TAGLINE BANNER -->
+    <div class="bg-corp-blue text-white py-5 text-center font-bold text-lg tracking-wide uppercase">
+        Local repairs, done by a local, at local prices.
+    </div>
+
+    <!-- DARK CORPORATE FOOTER -->
+    <footer class="bg-navy-950 text-slate-400 text-xs py-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="text-white font-bold tracking-tight text-sm uppercase">CORECODE REPAIRS</span>
+                <p class="text-slate-500 mt-1">Electronics Soldering & PC Repair Specialist</p>
+            </div>
+            <div>
+                &copy; <span id="year"></span> CoreCode Repairs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL CONFIRMATION -->
+    <div id="modal-overlay" class="fixed inset-0 bg-navy-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white border border-corp-border rounded-xl p-8 max-w-md w-full shadow-2xl relative text-center">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-navy-900 mb-2 uppercase">Quote Request Submitted</h3>
+            <p class="text-slate-600 text-sm mb-6">
+                Thank you for contacting CoreCode Repairs! We have received your request and will respond within <strong class="text-navy-900">1-2 business days</strong>.
+            </p>
+            <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg text-xs text-slate-700 text-left mb-6">
+                <strong class="text-navy-900 block mb-1">Drop-off & Pickup Details:</strong>
+                Details regarding drop-off or pickup will be arranged directly after your request is processed.
+            </div>
+            <button id="close-modal-btn" class="w-full bg-corp-blue hover:bg-corp-hover text-white font-bold py-3 rounded-lg transition-colors text-sm uppercase">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Set dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            });
+        });
+
+        // Form submission modal
+        const repairForm = document.getElementById('repair-form');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        repairForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            modalOverlay.classList.remove('hidden');
+            repairForm.reset();
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('hidden');
+        });
+
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
